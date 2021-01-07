@@ -4,8 +4,8 @@
 //Include the SSL client
 #include <WiFiClientSecure.h>
 
-char ssid[] = "XXXX";       // your network SSID (name)
-char password[] = "YYYY";  // your network key
+char ssid[] = "Gamers";       // your network SSID (name)
+char password[] = "tejG1234";  // your network key
 
 //Add a SSL client
 WiFiClientSecure client;
@@ -50,7 +50,7 @@ String getTitleOfNewestPost(String sub) {
   bool gotResponse = false;
   long now;
 
-  char host[] = "api.reddit.com";
+  char host[] = "www.fitterfly.com/pwp/patients/save_medication_signal";
 
   if (client.connect(host, 443)) {
     Serial.println("connected");
@@ -59,7 +59,7 @@ String getTitleOfNewestPost(String sub) {
 
     Serial.println(URL);
     
-    client.println("GET " + URL + " HTTP/1.1");
+    client.println("POST " + URL + " HTTP/1.1");
     client.print("Host: "); client.println(host);
     client.println("User-Agent: arduino/1.0");
     client.println("");
